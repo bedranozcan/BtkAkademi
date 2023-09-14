@@ -10,7 +10,7 @@ namespace BtkAkademi.Models
         public String? SelectedCourse { get; set; } = String.Empty;
         public DateTime ApplyAt { get; set; }
 
-        public Candidate(Parameters)
+        public Candidate()
         {
             ApplyAt=DateTime.Now;
         }

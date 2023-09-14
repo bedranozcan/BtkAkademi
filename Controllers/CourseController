@@ -1,0 +1,17 @@
+using Microsoft.AspNetCore.Mvc;
+namespace BtkAkademi.Controllers
+{
+    public class CourseController : Controllers
+    {
+        public IActionResult Index()
+        {
+            
+            return View();
+        }
+        public IActionResult Apply()
+        {
+            
+            return View();
+        }
+    }
+}
