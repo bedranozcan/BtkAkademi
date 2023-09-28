@@ -1,1 +1,36 @@
-Course
+@model IEnumerable<Candidate>
+    @if(Model.Count()>0)
+    {
+        <h6 class="display-6">
+            Başvurular(@Model.Count())
+        </h6>
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Adınız Soyadınız</th>
+                    <th>Başvuru Tarihi</th>
+                    <th>Kursun Adı</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(Candidate candidate in Model)
+                {
+                    <tr>
+                        <td>@candidate.Email</td>
+                        <td>@candidate.FullName</td>
+                        <td>@candidate.ApplyAt</td>
+                        <td>@candidate.SelectedCourse</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    }else
+    {
+        <div class="alert alert-info">
+            
+            Hiç başvurunuz yok.Lütfen bir 
+            <a class="alert-link" asp-action="Apply"> başvuru yapın!</a>          
+        </div>
+    }
